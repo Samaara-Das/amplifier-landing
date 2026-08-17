@@ -97,20 +97,27 @@
         If you're a <strong class="text-white">creator</strong>, your social feed is already worth money. Time to collect.
       </p>
 
-      <!-- Dual CTAs -->
-      <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-        <a href="https://api.pointcapitalis.com/company/login"
-           class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl text-base font-bold bg-indigo-600 hover:bg-indigo-500 text-white shadow-lg shadow-indigo-900/40 transition">
-          <!-- Office building icon -->
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-2 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
-          Create a campaign
+      <!-- Waitlist form — primary CTA -->
+      <div class="mt-10 max-w-md mx-auto">
+        <form class="waitlist-form flex flex-col sm:flex-row gap-3" data-source="hero" novalidate>
+          <label for="hero-email" class="sr-only">Email address</label>
+          <input id="hero-email" name="email" type="email" required autocomplete="email" placeholder="you@email.com"
+                 class="flex-1 min-w-0 px-5 py-4 rounded-xl bg-slate-900 border border-slate-700 text-white placeholder-slate-500 text-base focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent" />
+          <button type="submit"
+                  class="shrink-0 inline-flex items-center justify-center gap-2 px-7 py-4 rounded-xl text-base font-bold bg-indigo-600 hover:bg-indigo-500 text-white shadow-lg shadow-indigo-900/40 transition disabled:opacity-60 disabled:cursor-wait">
+            <span class="btn-label">Join the waitlist</span>
+          </button>
+        </form>
+        <p class="waitlist-msg mt-3 text-sm text-slate-400 min-h-[1.25rem]" role="status" aria-live="polite"></p>
+      </div>
+
+      <!-- Secondary: companies + existing install -->
+      <div class="mt-6 flex flex-col sm:flex-row items-center justify-center gap-x-6 gap-y-2 text-sm">
+        <a href="https://api.pointcapitalis.com/company/login" class="text-slate-400 hover:text-white transition">
+          Running a company? Create a campaign &rarr;
         </a>
-        <a href="https://github.com/Samaara-Das/amplifier-landing/releases/latest/download/AmplifierSetup-v1.0.0.exe"
-           class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl text-base font-bold bg-slate-800 hover:bg-slate-700 text-white border border-slate-700 transition">
-          <!-- Download icon -->
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
-          Download Amplifier
-          <span class="text-xs font-normal text-slate-400">Free</span>
+        <a href="https://github.com/Samaara-Das/amplifier-landing/releases/latest/download/AmplifierSetup-v1.0.0.exe" class="text-slate-500 hover:text-slate-300 transition">
+          Already invited? Download the app
         </a>
       </div>
 
@@ -427,11 +434,53 @@
               </div>
             </li>
           </ul>
-          <div class="mt-10">
+          <div class="mt-10 rounded-2xl bg-slate-900 card-glow p-6 sm:p-7">
+            <p class="text-sm font-semibold text-white mb-1">Founding creators get first access</p>
+            <p class="text-sm text-slate-400 mb-5">Campaigns are launching soon. Join now and we'll email you the moment one matches your platforms.</p>
+            <form class="waitlist-form space-y-4" data-source="for-creators" novalidate>
+              <div>
+                <label for="creator-email" class="sr-only">Email address</label>
+                <input id="creator-email" name="email" type="email" required autocomplete="email" placeholder="you@email.com"
+                       class="w-full px-4 py-3 rounded-lg bg-slate-950 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent" />
+              </div>
+              <fieldset>
+                <legend class="text-xs font-semibold uppercase tracking-widest text-slate-500 mb-2">Where do you post?</legend>
+                <div class="flex flex-wrap gap-2">
+                  <label class="platform-chip inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-sm text-slate-300 bg-slate-950 border border-slate-700 cursor-pointer transition has-[:checked]:bg-emerald-600/20 has-[:checked]:border-emerald-500 has-[:checked]:text-emerald-300">
+                    <input type="checkbox" name="platforms" value="linkedin" class="sr-only" /> LinkedIn
+                  </label>
+                  <label class="platform-chip inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-sm text-slate-300 bg-slate-950 border border-slate-700 cursor-pointer transition has-[:checked]:bg-emerald-600/20 has-[:checked]:border-emerald-500 has-[:checked]:text-emerald-300">
+                    <input type="checkbox" name="platforms" value="facebook" class="sr-only" /> Facebook
+                  </label>
+                  <label class="platform-chip inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-sm text-slate-300 bg-slate-950 border border-slate-700 cursor-pointer transition has-[:checked]:bg-emerald-600/20 has-[:checked]:border-emerald-500 has-[:checked]:text-emerald-300">
+                    <input type="checkbox" name="platforms" value="reddit" class="sr-only" /> Reddit
+                  </label>
+                  <label class="platform-chip inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-sm text-slate-300 bg-slate-950 border border-slate-700 cursor-pointer transition has-[:checked]:bg-emerald-600/20 has-[:checked]:border-emerald-500 has-[:checked]:text-emerald-300">
+                    <input type="checkbox" name="platforms" value="instagram" class="sr-only" /> Instagram
+                  </label>
+                </div>
+              </fieldset>
+              <div>
+                <label for="creator-followers" class="block text-xs font-semibold uppercase tracking-widest text-slate-500 mb-2">Rough audience size (optional)</label>
+                <select id="creator-followers" name="follower_estimate"
+                        class="w-full px-4 py-3 rounded-lg bg-slate-950 border border-slate-700 text-slate-300 focus:outline-none focus:ring-2 focus:ring-emerald-500">
+                  <option value="">Prefer not to say</option>
+                  <option value="500">Under 1,000</option>
+                  <option value="2500">1,000 &ndash; 5,000</option>
+                  <option value="7500">5,000 &ndash; 10,000</option>
+                  <option value="25000">10,000 &ndash; 50,000</option>
+                  <option value="75000">50,000+</option>
+                </select>
+              </div>
+              <button type="submit"
+                      class="w-full inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl font-bold bg-emerald-600 hover:bg-emerald-500 text-white transition disabled:opacity-60 disabled:cursor-wait">
+                <span class="btn-label">Join the waitlist</span>
+              </button>
+              <p class="waitlist-msg text-sm text-slate-400 min-h-[1.25rem]" role="status" aria-live="polite"></p>
+            </form>
             <a href="https://github.com/Samaara-Das/amplifier-landing/releases/latest/download/AmplifierSetup-v1.0.0.exe"
-               class="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl font-bold bg-emerald-600 hover:bg-emerald-500 text-white transition">
-              Download for free
-              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+               class="mt-4 block text-center text-xs text-slate-500 hover:text-slate-300 transition">
+              Already have an invite? Download the app instead
             </a>
           </div>
         </div>
@@ -546,7 +595,7 @@
             <span class="faq-icon ml-4 text-slate-400 text-xl leading-none">+</span>
           </summary>
           <div class="px-6 pb-5 text-slate-400 leading-relaxed text-sm">
-            <strong class="text-white">Completely free for creators.</strong> Download the app, connect your accounts, and start earning — no subscription, no credit card required, ever. Companies pay per engagement, with a 20% platform fee applied on top of creator payouts. There are no setup fees, no monthly retainers, and no minimum spend.
+            <strong class="text-white">Completely free for creators.</strong> Join the waitlist now, and once campaigns launch you'll download the app, connect your accounts, and start earning — no subscription, no credit card required, ever. Companies pay per engagement, with a 20% platform fee applied on top of creator payouts. There are no setup fees, no monthly retainers, and no minimum spend.
           </div>
         </details>
 
@@ -562,15 +611,22 @@
       <h2 class="text-3xl sm:text-4xl font-extrabold text-white leading-tight">
         Ready to turn your social feed into income?
       </h2>
-      <p class="mt-4 text-slate-300 text-lg">Or launch a campaign that converts. Either way, we've got you.</p>
-      <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-        <a href="https://github.com/Samaara-Das/amplifier-landing/releases/latest/download/AmplifierSetup-v1.0.0.exe"
-           class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl text-base font-bold bg-emerald-600 hover:bg-emerald-500 text-white shadow-lg shadow-emerald-900/30 transition">
-          Download Amplifier — Free
-        </a>
-        <a href="https://api.pointcapitalis.com/company/login"
-           class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl text-base font-bold bg-slate-800 hover:bg-slate-700 text-white border border-slate-700 transition">
-          Create a campaign
+      <p class="mt-4 text-slate-300 text-lg">Founding creators get first access when campaigns launch.</p>
+      <div class="mt-10 max-w-md mx-auto">
+        <form class="waitlist-form flex flex-col sm:flex-row gap-3" data-source="final-cta" novalidate>
+          <label for="final-email" class="sr-only">Email address</label>
+          <input id="final-email" name="email" type="email" required autocomplete="email" placeholder="you@email.com"
+                 class="flex-1 min-w-0 px-5 py-4 rounded-xl bg-slate-950/60 border border-slate-700 text-white placeholder-slate-500 text-base focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent" />
+          <button type="submit"
+                  class="shrink-0 inline-flex items-center justify-center gap-2 px-7 py-4 rounded-xl text-base font-bold bg-emerald-600 hover:bg-emerald-500 text-white shadow-lg shadow-emerald-900/30 transition disabled:opacity-60 disabled:cursor-wait">
+            <span class="btn-label">Join the waitlist</span>
+          </button>
+        </form>
+        <p class="waitlist-msg mt-3 text-sm text-slate-400 min-h-[1.25rem]" role="status" aria-live="polite"></p>
+      </div>
+      <div class="mt-6">
+        <a href="https://api.pointcapitalis.com/company/login" class="text-sm text-slate-400 hover:text-white transition">
+          Running a company instead? Create a campaign &rarr;
         </a>
       </div>
     </div>
@@ -591,5 +647,82 @@
     </div>
   </footer>
 
+  <script>
+    (function () {
+      var API_BASE = "https://api.pointcapitalis.com";
+
+      function setBusy(form, busy) {
+        var btn = form.querySelector("button[type=submit]");
+        var label = form.querySelector(".btn-label");
+        if (!btn) return;
+        btn.disabled = busy;
+        if (label) label.textContent = busy ? "Joining..." : "Join the waitlist";
+      }
+
+      function setMessage(form, text, isError) {
+        var msg = form.parentElement.querySelector(".waitlist-msg") || form.querySelector(".waitlist-msg");
+        if (!msg) return;
+        msg.textContent = text;
+        msg.classList.toggle("text-red-400", !!isError);
+        msg.classList.toggle("text-emerald-400", !isError && !!text);
+        msg.classList.toggle("text-slate-400", !text);
+      }
+
+      function isValidEmail(value) {
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+      }
+
+      async function handleSubmit(event) {
+        event.preventDefault();
+        var form = event.currentTarget;
+        var email = (form.querySelector("input[name=email]").value || "").trim();
+
+        if (!isValidEmail(email)) {
+          setMessage(form, "That email doesn't look right — check it and try again.", true);
+          return;
+        }
+
+        var platforms = Array.prototype.slice
+          .call(form.querySelectorAll("input[name=platforms]:checked"))
+          .map(function (el) { return el.value; });
+
+        var followerSelect = form.querySelector("select[name=follower_estimate]");
+        var followerEstimate = followerSelect && followerSelect.value ? parseInt(followerSelect.value, 10) : null;
+
+        setBusy(form, true);
+        setMessage(form, "", false);
+
+        try {
+          var res = await fetch(API_BASE + "/api/waitlist", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              email: email,
+              platforms: platforms,
+              follower_estimate: followerEstimate,
+              source: form.dataset.source || "landing"
+            })
+          });
+
+          if (res.ok) {
+            setMessage(form, "You're on the list — we'll email you when campaigns launch.", false);
+            form.reset();
+          } else if (res.status === 429) {
+            setMessage(form, "Too many attempts — wait a moment and try again.", true);
+          } else {
+            setMessage(form, "Something went wrong. Please try again in a moment.", true);
+          }
+        } catch (err) {
+          setMessage(form, "Couldn't reach the server. Check your connection and try again.", true);
+        } finally {
+          setBusy(form, false);
+        }
+      }
+
+      document.querySelectorAll(".waitlist-form").forEach(function (form) {
+        form.addEventListener("submit", handleSubmit);
+      });
+    })();
+  </script>
 </body>
 </html>
