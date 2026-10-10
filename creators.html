@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Amplifier for creators: Earn per sale from your own accounts</title>
+  <meta name="description" content="Share products you like from your own LinkedIn, Facebook, Reddit and Instagram accounts. AI writes the posts. You keep 100% of the commission on every sale." />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://samaara-das.github.io/amplifier-landing/creators.html" />
+  <meta property="og:title" content="Amplifier for creators: Earn per sale from your own accounts" />
+  <meta property="og:description" content="Share products you like from your own LinkedIn, Facebook, Reddit and Instagram accounts. AI writes the posts. You keep 100% of the commission on every sale." />
+  <meta property="og:image" content="https://samaara-das.github.io/amplifier-landing/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Amplifier for creators: Earn per sale from your own accounts" />
+  <meta name="twitter:description" content="Share products you like from your own LinkedIn, Facebook, Reddit and Instagram accounts. AI writes the posts. You keep 100% of the commission on every sale." />
+  <meta name="twitter:image" content="https://samaara-das.github.io/amplifier-landing/og-image.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CDN must run before paint; site.js holds its config -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="site.js"></script>
+  <link rel="stylesheet" href="site.css" />
+</head>
+
+<body class="bg-white text-ink antialiased">
+
+  <!-- TOP BAR -->
+  <header id="bar">
+    <div class="inner">
+      <a href="index.html" class="text-xl font-semibold tracking-tight">Amplifier</a>
+      <nav class="hidden md:flex items-center gap-7 text-sm">
+        <a href="#how-it-works" class="hover:text-mute transition">How it works</a>
+        <a href="#faq" class="hover:text-mute transition">FAQ</a>
+        <a href="index.html" class="hover:text-mute transition">I'm a company &rarr;</a>
+      </nav>
+      <a href="#join" class="btn text-sm !py-2.5">Join the waitlist &rarr;</a>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="relative overflow-hidden pt-32 sm:pt-40 pb-20 sm:pb-28">
+    <div class="glow"></div>
+    <div class="max-w-5xl mx-auto px-5 sm:px-8 text-center">
+      <p class="eyebrow">For creators</p>
+      <h1 class="h-hero mt-6">Earn <em>per sale</em> from <em>your own accounts.</em></h1>
+      <p class="mt-7 text-lg sm:text-xl text-mute max-w-2xl mx-auto leading-relaxed">
+        Pick products you like. AI writes the posts for LinkedIn, Facebook, Reddit and Instagram. You approve them, they go out from your own accounts, and you keep 100% of the commission on every sale.
+      </p>
+      <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-3">
+        <a href="#join" class="btn btn-red !py-4 !px-8 text-lg">Join the waitlist &rarr;</a>
+        <a href="https://github.com/Samaara-Das/amplifier-landing/releases/latest/download/AmplifierSetup-v1.0.0.exe" class="btn btn-ghost !py-4 !px-8 text-lg">Download for Windows</a>
+      </div>
+      <p class="mt-4 text-sm text-mute">Free for creators. Windows only for now.</p>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section id="how-it-works" class="py-20 sm:py-28 bg-[#F8F8F9]">
+    <div class="max-w-5xl mx-auto px-5 sm:px-8">
+      <div class="text-center max-w-3xl mx-auto">
+        <p class="eyebrow">How it works</p>
+        <h2 class="h-section mt-5">Four steps. <em>You stay in control.</em></h2>
+      </div>
+      <ol class="mt-14 grid sm:grid-cols-2 gap-5">
+        <li class="card p-7">
+          <span class="mono text-sm text-mute">01</span>
+          <h3 class="mt-4 text-xl font-medium tracking-tight">Install the app and connect your accounts</h3>
+          <p class="mt-3 text-mute leading-relaxed">Connect LinkedIn, Facebook, Reddit and Instagram. The app uses your own logged-in browser. Our server never sees your passwords.</p>
+        </li>
+        <li class="card p-7">
+          <span class="mono text-sm text-mute">02</span>
+          <h3 class="mt-4 text-xl font-medium tracking-tight">Accept campaigns</h3>
+          <p class="mt-3 text-mute leading-relaxed">The app shows campaigns that match your niche and platforms, with the commission for each sale. Take the ones you like.</p>
+        </li>
+        <li class="card p-7">
+          <span class="mono text-sm text-mute">03</span>
+          <h3 class="mt-4 text-xl font-medium tracking-tight">Review the posts, or let the app post</h3>
+          <p class="mt-3 text-mute leading-relaxed">AI writes a post and an image for each platform. Approve, edit or skip each draft. Or turn on auto-post.</p>
+        </li>
+        <li class="card p-7">
+          <span class="mono text-sm text-mute">04</span>
+          <h3 class="mt-4 text-xl font-medium tracking-tight">Earn for every sale</h3>
+          <p class="mt-3 text-mute leading-relaxed">You keep 100% of the commission. Earnings wait 7 days, then you withdraw them through Stripe.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- WAITLIST + DOWNLOAD -->
+  <section id="join" class="py-20 sm:py-28">
+    <div class="max-w-xl mx-auto px-5 sm:px-8">
+      <div class="text-center">
+        <p class="eyebrow">Join</p>
+        <h2 class="h-section mt-5">Get in <em>early.</em></h2>
+        <p class="mt-5 text-lg text-mute leading-relaxed">Leave your email and we'll tell you when a campaign matches your platforms.</p>
+      </div>
+      <div class="card p-6 sm:p-8 mt-10">
+        <form class="waitlist-form space-y-5" data-source="for-creators" novalidate>
+          <div>
+            <label for="creator-email" class="sr-only">Email address</label>
+            <input id="creator-email" name="email" type="email" required autocomplete="email" placeholder="you@email.com" class="field" />
+          </div>
+          <fieldset>
+            <legend class="mono text-xs uppercase tracking-widest text-mute mb-3">Where do you post?</legend>
+            <div class="flex flex-wrap gap-2">
+              <label class="chip relative"><input type="checkbox" name="platforms" value="linkedin" />LinkedIn</label>
+              <label class="chip relative"><input type="checkbox" name="platforms" value="facebook" />Facebook</label>
+              <label class="chip relative"><input type="checkbox" name="platforms" value="reddit" />Reddit</label>
+              <label class="chip relative"><input type="checkbox" name="platforms" value="instagram" />Instagram</label>
+            </div>
+          </fieldset>
+          <div>
+            <label for="creator-followers" class="block mono text-xs uppercase tracking-widest text-mute mb-3">Rough audience size (optional)</label>
+            <select id="creator-followers" name="follower_estimate" class="field">
+              <option value="">Prefer not to say</option>
+              <option value="500">Under 1,000</option>
+              <option value="2500">1,000 &ndash; 5,000</option>
+              <option value="7500">5,000 &ndash; 10,000</option>
+              <option value="25000">10,000 &ndash; 50,000</option>
+              <option value="75000">50,000+</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-red w-full !py-3.5"><span class="btn-label">Join the waitlist</span></button>
+          <p class="waitlist-msg text-sm text-mute min-h-[1.25rem]" role="status" aria-live="polite"></p>
+        </form>
+        <a href="https://github.com/Samaara-Das/amplifier-landing/releases/latest/download/AmplifierSetup-v1.0.0.exe" class="mt-2 block text-center text-sm text-mute hover:text-ink transition">
+          Already have an invite? Download the app (Windows)
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="py-20 sm:py-28 bg-[#F8F8F9]">
+    <div class="max-w-3xl mx-auto px-5 sm:px-8">
+      <div class="text-center">
+        <p class="eyebrow">FAQ</p>
+        <h2 class="h-section mt-5">Questions <em>creators ask.</em></h2>
+      </div>
+      <div class="mt-12 divide-y divide-black/10 border-y border-black/10">
+        <details class="py-5">
+          <summary class="flex items-center justify-between gap-4 text-lg font-medium tracking-tight">Does it cost me anything? <span class="faq-icon text-2xl text-mute">+</span></summary>
+          <p class="mt-3 text-mute leading-relaxed">No. There is no fee for creators. You keep 100% of the commission a company sets for each sale. The company pays Amplifier's 20% on top.</p>
+        </details>
+        <details class="py-5">
+          <summary class="flex items-center justify-between gap-4 text-lg font-medium tracking-tight">Do you see my passwords? <span class="faq-icon text-2xl text-mute">+</span></summary>
+          <p class="mt-3 text-mute leading-relaxed">No. The app runs on your PC and posts through your own logged-in browser. Our server never sees your passwords.</p>
+        </details>
+        <details class="py-5">
+          <summary class="flex items-center justify-between gap-4 text-lg font-medium tracking-tight">Do I have to approve every post? <span class="faq-icon text-2xl text-mute">+</span></summary>
+          <p class="mt-3 text-mute leading-relaxed">No. You can review each draft before it posts, or let the app post on its own. You choose.</p>
+        </details>
+        <details class="py-5">
+          <summary class="flex items-center justify-between gap-4 text-lg font-medium tracking-tight">When do I get paid? <span class="faq-icon text-2xl text-mute">+</span></summary>
+          <p class="mt-3 text-mute leading-relaxed">Earnings wait 7 days. After that you can withdraw them through Stripe.</p>
+        </details>
+        <details class="py-5">
+          <summary class="flex items-center justify-between gap-4 text-lg font-medium tracking-tight">Do my posts say they are paid? <span class="faq-icon text-2xl text-mute">+</span></summary>
+          <p class="mt-3 text-mute leading-relaxed">Yes. Each post carries the paid-partnership label (#ad) that the FTC requires.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER: the one near-black section -->
+  <footer class="dark">
+    <div class="max-w-5xl mx-auto px-5 sm:px-8 py-16 text-center">
+      <p class="text-2xl sm:text-3xl font-medium tracking-tight">Are you a company?</p>
+      <a href="index.html" class="btn btn-ghost mt-6">See how companies use Amplifier &rarr;</a>
+    </div>
+    <div class="border-t border-white/10">
+      <div class="max-w-5xl mx-auto px-5 sm:px-8 py-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm mute">
+        <span class="font-semibold text-white">Amplifier</span>
+        <nav class="flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
+          <a href="index.html" class="hover:text-white transition">For companies</a>
+          <a href="https://api.pointcapitalis.com/terms" class="hover:text-white transition">Terms</a>
+          <a href="https://api.pointcapitalis.com/privacy" class="hover:text-white transition">Privacy</a>
+          <a href="mailto:dassamaara@gmail.com" class="hover:text-white transition">Support</a>
+        </nav>
+        <span>&copy; 2026 Amplifier</span>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
