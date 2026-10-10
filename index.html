@@ -63,14 +63,66 @@
       </p>
 
       <!-- b2: hero URL box -->
-      <div class="mt-10 max-w-xl mx-auto">
-        <form id="url-form" class="flex flex-col sm:flex-row gap-3" novalidate>
-          <label for="hero-website" class="sr-only">Your website</label>
-          <input id="hero-website" name="website" type="text" inputmode="url" autocomplete="url" placeholder="Paste your website" class="field" />
-          <button type="submit" class="btn btn-red shrink-0 !py-3.5 !px-7"><span class="btn-label">Start free</span> &rarr;</button>
+      <div id="hero-start" class="mt-10 max-w-xl mx-auto">
+        <div id="hero-url">
+          <form id="url-form" class="flex flex-col sm:flex-row gap-3" novalidate>
+            <label for="hero-website" class="sr-only">Your website, app-store or social link</label>
+            <input id="hero-website" name="website" type="text" inputmode="url" autocomplete="url" placeholder="Paste your website" class="field" />
+            <button type="submit" class="btn btn-red shrink-0 !py-3.5 !px-7"><span class="btn-label">Start free</span> &rarr;</button>
+          </form>
+          <p class="waitlist-msg mt-3 text-sm text-mute min-h-[1.25rem]" role="status" aria-live="polite"></p>
+          <a href="#hero-start" data-open-card class="text-sm underline underline-offset-4 decoration-black/30 hover:decoration-black transition">No website yet? Tell us about it</a>
+        </div>
+
+        <!-- c1 + c2: one-card start for companies with no website. Hand-off: site.js builds /company/login?tab=register&name=&about=&status=&launch=&sale= -->
+        <form id="start-form" hidden novalidate class="text-left">
+          <div class="start-card">
+            <div class="step rise" data-step="1">
+              <label for="sf-name" class="q-label">What's it called?</label>
+              <p id="sf-name-h" class="q-help">The name people will know it by.</p>
+              <input id="sf-name" name="name" type="text" maxlength="120" autocomplete="organization" aria-describedby="sf-name-h" class="field mt-3" />
+            </div>
+
+            <div class="step" data-step="2" hidden>
+              <label for="sf-about" class="q-label">What is it, and who's it for?</label>
+              <p id="sf-about-h" class="q-help">A few sentences in your own words. What it does, who it's for, and what makes it different.</p>
+              <textarea id="sf-about" name="about" rows="5" maxlength="1500" aria-describedby="sf-about-h sf-about-hint sf-about-count" class="field mt-3"></textarea>
+              <p id="sf-about-hint" class="q-hint">Think: what you sell &middot; who it's for &middot; the problem it solves &middot; what makes it different &middot; how it should sound &middot; what to avoid.</p>
+              <p id="sf-about-count" class="q-hint" aria-live="polite"></p>
+            </div>
+
+            <div class="step" data-step="3" role="group" aria-labelledby="sf-status-q" hidden>
+              <p id="sf-status-q" class="q-label">Is it out yet?</p>
+              <div class="seg mt-3">
+                <label><input type="radio" name="status" value="live" /><span>Live</span></label>
+                <label><input type="radio" name="status" value="soon" /><span>Coming soon</span></label>
+              </div>
+              <div id="sf-launch-wrap" class="mt-4" hidden>
+                <label for="sf-launch" class="q-label !text-base">Launch date</label>
+                <p id="sf-launch-h" class="q-help">Optional. Posts only mention it while it's ahead.</p>
+                <input id="sf-launch" name="launch" type="date" aria-describedby="sf-launch-h" class="field mt-3 sm:max-w-[14rem]" />
+              </div>
+            </div>
+
+            <div class="step" data-step="4" role="group" aria-labelledby="sf-sale-q" hidden>
+              <p id="sf-sale-q" class="q-label">What counts as a sale?</p>
+              <div class="mt-3 flex flex-wrap gap-2">
+                <label class="chip" data-when="live"><input type="radio" name="sale" value="buy" />Buy it</label>
+                <label class="chip" data-when="live"><input type="radio" name="sale" value="signup" />Sign up</label>
+                <label class="chip" data-when="live"><input type="radio" name="sale" value="install" />Install the app</label>
+                <label class="chip" data-when="live"><input type="radio" name="sale" value="book" />Book a call</label>
+                <label class="chip" data-when="live soon"><input type="radio" name="sale" value="waitlist" />Join the waitlist</label>
+                <label class="chip" data-when="soon"><input type="radio" name="sale" value="follow" />Follow for the launch</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-6 text-center">
+            <button id="start-go" type="submit" class="btn btn-red !py-3.5 !px-9 w-full sm:w-auto" disabled>Get started &rarr;</button>
+            <p class="mt-3 text-sm text-mute">Next: create your account.</p>
+            <button id="start-back" type="button" class="mt-4 text-sm underline underline-offset-4 decoration-black/30 hover:decoration-black transition">I do have a link</button>
+          </div>
         </form>
-        <p class="waitlist-msg mt-3 text-sm text-mute min-h-[1.25rem]" role="status" aria-live="polite"></p>
-        <a href="#tell-us" class="text-sm underline underline-offset-4 decoration-black/30 hover:decoration-black transition">No website yet? Tell us about it</a>
       </div>
 
       <div class="mt-14 flex flex-wrap items-center justify-center gap-x-8 gap-y-2 mono text-xs uppercase tracking-widest text-mute">
@@ -189,7 +241,7 @@
   </section>
 
   <!-- FINAL CTA + FOOTER: the one near-black section -->
-  <section id="tell-us" class="dark">
+  <section class="dark">
     <div class="max-w-3xl mx-auto px-5 sm:px-8 pt-24 sm:pt-32 pb-20 text-center">
       <p class="eyebrow">Get started</p>
       <h2 class="h-section mt-5">Your next sale could come from <em>a real person.</em></h2>
@@ -197,14 +249,7 @@
       <a href="https://api.pointcapitalis.com/company/login" class="btn btn-red mt-9 !py-4 !px-9 text-lg">Start free &rarr;</a>
 
       <div class="mt-16 pt-10 border-t border-white/10">
-        <p class="text-lg font-medium tracking-tight">No website yet? Tell us about it.</p>
-        <p class="mt-2 mute">Leave your email and we'll get in touch.</p>
-        <form class="waitlist-form mt-6 flex flex-col sm:flex-row gap-3 max-w-md mx-auto" data-source="company-no-website" novalidate>
-          <label for="final-email" class="sr-only">Email address</label>
-          <input id="final-email" name="email" type="email" required autocomplete="email" placeholder="you@company.com" class="field" />
-          <button type="submit" class="btn btn-ghost shrink-0 !py-3.5 !px-7"><span class="btn-label">Tell us</span></button>
-        </form>
-        <p class="waitlist-msg mt-3 text-sm mute min-h-[1.25rem]" role="status" aria-live="polite"></p>
+        <a href="#hero-start" data-open-card class="text-lg font-medium tracking-tight underline underline-offset-4 decoration-white/30 hover:decoration-white transition">No website yet? Tell us about it &rarr;</a>
       </div>
     </div>
 
