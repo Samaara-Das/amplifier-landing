@@ -1,5 +1,5 @@
-# Amplifier — Landing Page
+# Amplifire — Landing Page
 
-Static marketing site for [Amplifier](https://amplifier.app) (main repo is private).
+Static marketing site for [Amplifire](https://amplifier.app) (main repo is private).
 
-URL: https://samaara-das.github.io/amplifier-landing/
+URL: https://samaara-das.github.io/amplifire-landing/
