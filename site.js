@@ -17,55 +17,13 @@ document.addEventListener("DOMContentLoaded", function () {
   window.addEventListener("scroll", onScroll, { passive: true });
   onScroll();
 
-  // Waitlist forms: same endpoint and fields as before (POST /api/waitlist: email, platforms, follower_estimate, source)
+  // Status line under the hero URL box
   function setMessage(form, text, isError) {
-    var msg = form.parentElement.querySelector(".waitlist-msg") || form.querySelector(".waitlist-msg");
+    var msg = form.parentElement.querySelector(".status-msg") || form.querySelector(".status-msg");
     if (!msg) return;
     msg.textContent = text;
     msg.style.color = isError ? "#FF2E2E" : "";
   }
-
-  async function handleWaitlist(event) {
-    event.preventDefault();
-    var form = event.currentTarget;
-    var btn = form.querySelector("button[type=submit]");
-    var label = btn.querySelector(".btn-label");
-    var idle = label.textContent;
-    var email = (form.querySelector("input[name=email]").value || "").trim();
-
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-      setMessage(form, "That email doesn't look right. Check it and try again.", true);
-      return;
-    }
-    var platforms = Array.prototype.slice.call(form.querySelectorAll("input[name=platforms]:checked")).map(function (el) { return el.value; });
-    var followerSelect = form.querySelector("select[name=follower_estimate]");
-    var followerEstimate = followerSelect && followerSelect.value ? parseInt(followerSelect.value, 10) : null;
-
-    btn.disabled = true;
-    label.textContent = "Sending...";
-    setMessage(form, "", false);
-    try {
-      var res = await fetch(API_BASE + "/api/waitlist", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email: email, platforms: platforms, follower_estimate: followerEstimate, source: form.dataset.source || "landing" })
-      });
-      if (res.ok) {
-        setMessage(form, "You're on the list. We'll email you.", false);
-        form.reset();
-      } else if (res.status === 429) {
-        setMessage(form, "Too many attempts. Wait a moment and try again.", true);
-      } else {
-        setMessage(form, "Something went wrong. Please try again in a moment.", true);
-      }
-    } catch (err) {
-      setMessage(form, "Couldn't reach the server. Check your connection and try again.", true);
-    } finally {
-      btn.disabled = false;
-      label.textContent = idle;
-    }
-  }
-  document.querySelectorAll(".waitlist-form").forEach(function (f) { f.addEventListener("submit", handleWaitlist); });
 
   // Hand-off to company sign-up. Contract: /company/login?tab=register&name=&about=&status=&launch=&sale=&url=
   // Empty values are omitted; the server validates and caps everything.

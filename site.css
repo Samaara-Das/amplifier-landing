@@ -77,3 +77,27 @@ textarea.field { border-radius: 16px; resize: vertical; }
   html { scroll-behavior: auto; }
 }
 @media (max-width: 480px) { .start-card { padding: 20px; } }
+
+/* Without / With pairs: one row per pair; labels show on phones only */
+.pair { display: grid; gap: 10px; }
+.pair p { padding: 16px 20px; border-radius: 16px; line-height: 1.45; }
+.pair .no { background: #F1F1F3; color: #55555B; }
+.pair .yes { background: #fff; color: var(--ink); font-weight: 500; border: 1px solid rgba(18, 17, 17, .08); box-shadow: 0 1px 2px rgba(18, 17, 17, .04); }
+.pair p::before { display: block; margin-bottom: 4px; font-family: "Geist Mono", ui-monospace, monospace; font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--mute); }
+.pair .no::before { content: "Without"; }
+.pair .yes::before { content: "With"; }
+.pair-head { display: none; }
+@media (min-width: 768px) {
+  .pair { grid-template-columns: 1fr 1fr; gap: 16px; }
+  .pair p::before { display: none; }
+  .pair-head { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+}
+
+/* Small grey line under every button */
+.fine { margin-top: 10px; font-size: 13px; line-height: 1.4; color: var(--mute); }
+.dark .fine { color: #9A9AA2; }
+
+/* "Everything you get" cards */
+.feat-list { margin-top: 14px; display: grid; gap: 10px; color: var(--mute); line-height: 1.5; font-size: 15px; }
+.feat-list li { position: relative; padding-left: 16px; }
+.feat-list li::before { content: ""; position: absolute; left: 0; top: .6em; width: 5px; height: 5px; border-radius: 9999px; background: var(--accent); }
