@@ -12,7 +12,7 @@ A `1200 x 630 px` PNG needs to be created and placed at `landing/og-image.png`.
 ## Suggested content
 
 - Dark background matching the site (`#0f172a` slate-950)
-- Amplifier logo/wordmark
+- Amplifire logo/wordmark
 - One-line headline: "Get paid to post. Get real people to post for you."
 - Platform logos: LinkedIn, Facebook, Reddit
 - Indigo accent color (`#4f46e5`)
